@@ -8,19 +8,20 @@
 package solution;
 
 public class Solution {
-        public int findMaxConsecutiveOnes(int[] nums) {
-            int count = 0;
-            int maxi = 0;
-            for(int i=0; i<nums.length; i++){
-                if(nums[i]==1){
-                    count++;
-                }else{
-                    count = 0;
-                }
-                maxi = Math.max(maxi, count);
+    public int findNumbers(int[] nums) {
+        int count = 0;
+        for(int element : nums){
+            int twoDigitsNum=0;
+            while(element!=0){
+                twoDigitsNum+=1;
+                element/=10;
             }
-            return maxi;
-
+            if(twoDigitsNum%2==0){
+                count+=1;
+            }
 
         }
+        return count;
+    }
+
 }
